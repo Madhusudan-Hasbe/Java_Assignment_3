@@ -29,13 +29,16 @@ public class StudentFunctions {
     public void searchStudent() {
         System.out.print("Enter PRN to search: ");
         int searchPrn = sc.nextInt();
+        boolean found = false;
         for (Student student : students) {
             if (student.getPrn() == searchPrn) {
                 System.out.println("PRN: " + student.getPrn() + ", Name: " + student.getName() + ", DOB: " + student.getDob() + ", Marks: " + student.getMarks());
+                found = true;
                 break;
-            } else {
-                System.out.println("Student not found!");
             }
+        } 
+        if (!found) {
+            System.out.println("Student not found!");
         }
     }
 
